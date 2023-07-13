@@ -14,7 +14,27 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <a href="/management">
+                            <h4>Management</h4>
+                            <img src="{{ asset('images/pic1.jpg') }}" width="50px" alt="">
+                        </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/cashier">
+                            <h4>Cashier</h4>
+                            <img src="{{ asset('images/pic2.jpg') }}" width="50px" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/report">
+                            <h4>Report</h4>
+                            <img src="{{ asset('images/pic3.jpg') }}" width="50px" alt="">
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
