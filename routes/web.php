@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Management\CategoryController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/management', function(){
     return view('management.index');
 });
+
+Route::resource('management/category','Management\CategoryController');
+

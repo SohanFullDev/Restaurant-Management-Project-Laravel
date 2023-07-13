@@ -11,7 +11,11 @@
                     <a href="" class="list-group-item list-group-item-action"> <i class="fas fa-users-cog"></i>User</a>
                 </div>
             </div>
-        <div class="col-md-8">Content</div>
+        <div class="col-md-8">
+            <i class="fas fa-align-justify"></i>Category
+            <a href="/management/category/create" class="btn btn-success btn-sm float-right"> <i class="fas fa-plus"></i>Create Category</a>
+            <hr>
+        </div>
         </div>
 
     </div>
