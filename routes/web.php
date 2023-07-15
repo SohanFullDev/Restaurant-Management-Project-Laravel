@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\Management\CategoryController;
+
+use App\Http\Controllers\Management\MenuController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Management\CategoryController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +31,4 @@ Route::get('/management', function(){
 });
 
 Route::resource('management/category','Management\CategoryController');
-
+Route::resource('management/menu','Management\MenuController');
