@@ -40,6 +40,7 @@
                             </td>
                      <td>{{ $menu->description }}</td>
                      <td>{{ $menu->category->name }}</td>
+                     <td><a href="/management/menu/{{ $menu->id }}/edit" class="btn btn-warning">Edit</a></td>
 
                     </tr>
                     @endforeach
