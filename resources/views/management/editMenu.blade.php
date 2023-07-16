@@ -17,9 +17,9 @@
                     </ul>
                 </div>
             @endif
-            <form action="/management/menu" method="POST" enctype="multipart/form-data">
+            <form action="/management/menu/{{ $menu->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
-
+                @method('PUT')
                 <div class="form-group">
                     <label for="menuName">Menu Name</label>
                     <input type="text" name="name" value="{{ $menu->name }}" class="form-control" placeholder="Menu...">

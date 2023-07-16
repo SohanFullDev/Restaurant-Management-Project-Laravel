@@ -113,7 +113,40 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //information validation
+        $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required|numeric',
+            'category_id' => 'required|numeric'
+
+        ]);
+        $menu = Menu::find($id);
+        // validate if a user upload image
+        if($request->image){
+            $request->validate([
+                'image'=>'nullable|file|image|mimes:jpeg,png,jpg,svg|max:5000'
+            ]);
+            if($menu->image !="noimage.png"){
+                $imageName = $menu->image;
+                unlink(public_path('menu_images').'/'.$imageName);
+            }
+            $imageName = date('mdYHis').uniqid().'.'.$request->image->extension();
+            $request->image->move(public_path('menu_images'), $imageName);
+
+        }else{
+            $imageName = $menu->image;
+        }
+
+        $menu->name = $request->name;
+        $menu->price = $request->price;
+        $menu->image = $imageName;
+        $menu->description = $request->description;
+        $menu->category_id = $request->category_id;
+        $menu->save();
+        $request->session()->flash('status', $request->name. ' is updated successfully');
+        return redirect('/management/menu');
+
+
     }
 
     /**
