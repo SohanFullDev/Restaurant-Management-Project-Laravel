@@ -42,6 +42,14 @@
                      <td>{{ $menu->category->name }}</td>
                      <td><a href="/management/menu/{{ $menu->id }}/edit" class="btn btn-warning">Edit</a></td>
 
+                     <td>
+                        <form action="/management/menu/{{ $menu->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                       <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+
+                     </td>
                     </tr>
                     @endforeach
 
