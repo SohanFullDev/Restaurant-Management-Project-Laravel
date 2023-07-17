@@ -15,7 +15,8 @@ class TableController extends Controller
      */
     public function index()
     {
-        return view('management.table');
+        $tables = Table::all();
+        return view('management.table')->with('tables',$tables);
     }
 
     /**

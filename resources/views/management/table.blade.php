@@ -26,7 +26,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($tables as $table )
+                        <tr>
+                            <td>{{ $table->id }}</td>
+                            <td>{{ $table->name }}</td>
+                            <td>{{ $table->status }}</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
 
+                        </tr>
+                    @endforeach
 
                 </tbody>
             </table>
