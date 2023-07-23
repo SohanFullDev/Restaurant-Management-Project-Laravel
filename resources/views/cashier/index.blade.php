@@ -9,7 +9,20 @@
          <div class="col-md-5">
             <button class="btn btn-primary btn-block" id="btn-show-tables">View All Tables</button>
          </div>
-         <div class="col-md-7"></div>
+         <div class="col-md-7">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    @foreach ($categories as $category)
+                    <a href="" class="nav-item nav-link" data-toggle="tab">
+                        {{ $category->name }}
+                    </a>
+                    @endforeach
+
+                </div>
+
+            </nav>
+
+         </div>
 
     </div>
 </div>
