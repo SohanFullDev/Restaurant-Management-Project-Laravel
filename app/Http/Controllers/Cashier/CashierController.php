@@ -28,10 +28,15 @@ class CashierController extends Controller
             //$html .= $table->name;
             $html .= '<button class="btn btn-primary btn-table" data-id="'.$table->id.'" data-name="'.$table->name.'">
             <img class="img-fluid" src="'.url('/images/table.svg').'"/>
-            <br>
-            <span class="badge badge-success">'.$table->name.'</span>
+            <br>';
+            if($table->status == "available"){
+                $html .= ' <span class="badge badge-success">'.$table->name.'</span>';
 
-            </button>';
+            }else {
+                $html .= ' <span class="badge badge-danger">'.$table->name.'</span>';
+            }
+
+            $html .= '</button>';
             $html .= '</div>';
         }
         return $html;
