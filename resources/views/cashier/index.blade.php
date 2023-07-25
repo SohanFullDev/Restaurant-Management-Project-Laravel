@@ -110,6 +110,25 @@ $("#list-menu").on("click", ".btn-menu", function(){
     }
 
 });
+    $("#order-detail").on('click', ".btn-confirm-order", function(){
+        var SaleID = $(this).data("id");
+        $.ajax({
+            type: "POST",
+            data: {
+                "_token" : $('meta[name="csrf-token"]').attr('content'),
+                "sale_id" : SaleID
+
+            },
+            url: "/cashier/confirmOrderStatus",
+            success: function(data){
+                $("#order-detail").html(data);
+            }
+
+        });
+
+    });
+
+
 
    });
 

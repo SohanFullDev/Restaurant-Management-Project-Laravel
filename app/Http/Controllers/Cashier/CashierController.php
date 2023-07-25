@@ -203,7 +203,17 @@ class CashierController extends Controller
          $html .= '<hr>';
          $html .= '<h3>Total Amount: $'.number_format($sale->total_price).'</h3>';
 
+         $html .= '<button data-id="'.$sale_id.'" class="btn btn-warning btn-block btn-confirm-order">Confirm Order</button>';
+
          return $html;
+
+    }
+
+    public function confirmOrderStatus(Request $request){
+        $sale_id = $request->sale_id;
+        $saleDetails = SaleDetail::where('sale_id', $sale_id)->update(['status'=>'confirm']);
+        $html = $this->getSaleDetails($sale_id);
+        return $html;
 
     }
 

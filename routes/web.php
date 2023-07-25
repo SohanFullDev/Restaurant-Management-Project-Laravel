@@ -40,6 +40,8 @@ Route::get('/cashier/getSaleDetailsByTable/{table_id}','Cashier\CashierControlle
 
 Route::post('/cashier/orderFood', 'Cashier\CashierController@orderFood');
 
+Route::post('/cashier/confirmOrderStatus','Cashier\CashierController@confirmOrderStatus');
+
 
 Route::resource('management/category','Management\CategoryController');
 Route::resource('management/menu','Management\MenuController');
