@@ -143,6 +143,19 @@ class CashierController extends Controller
 
     }
 
+    public function getSaleDetailsByTable($table_id){
+        $sale = Sale::where('table_id', $table_id)->where('sale_status','unpaid')->first();
+        $html = '';
+        if($sale){
+            $sale_id = $sale->id;
+            $html .= $this->getSaleDetails($sale_id);
+        }else{
+            $html .= "Not Found Any Sale Details For The Selected Table!";
+        }
+        return $html;
+
+    }
+
     private function getSaleDetails($sale_id){
          //list all saledetail
          $html = '<p>Sale ID: '.$sale_id.' </p>';
