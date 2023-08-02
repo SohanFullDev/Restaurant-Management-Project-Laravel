@@ -183,9 +183,6 @@ class CashierController extends Controller
 
          $showBtnPayment = true;
          foreach($saleDetails as $saleDetail){
-            if($saleDetail->status == "noConfirm"){
-                $showBtnPayment = false;
-            }
 
              $html .='
                  <tr>
@@ -193,12 +190,16 @@ class CashierController extends Controller
                      <td>'.$saleDetail->menu_name.'</td>
                      <td>'.$saleDetail->quantity.'</td>
                      <td>'.$saleDetail->menu_price.'</td>
-                     <td>'.($saleDetail->menu_price * $saleDetail->quantity).'</td>
-                     <td>'.$saleDetail->status.'</td>
+                     <td>'.($saleDetail->menu_price * $saleDetail->quantity).'</td>';
+                     if($saleDetail->status == "noConfirm"){
+                        $showBtnPayment = false;
+                        $html .= '<td><a data-id="'.$saleDetail->id.'" class="btn btn-danger btn-delete-saledetail"><i class="far fa-trash-alt"></i></a></td>';
+                    }else{ //status == "confirm"
+                        $html .= '<td><i class="fas fa-check-circle"></i></td>';
 
-                 </tr>
+                    }
 
-             ';
+                    $html .= '</tr>';
 
          }
 
