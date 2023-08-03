@@ -39,6 +39,8 @@ Route::get('/cashier/getTable', 'Cashier\CashierController@getTables');
 Route::get('/cashier/getSaleDetailsByTable/{table_id}','Cashier\CashierController@getSaleDetailsByTable');
 
 Route::post('/cashier/orderFood', 'Cashier\CashierController@orderFood');
+Route::post('/cashier/deleteSaleDetail','Cashier\CashierController@deleteSaleDetail');
+
 
 Route::post('/cashier/confirmOrderStatus','Cashier\CashierController@confirmOrderStatus');
 
