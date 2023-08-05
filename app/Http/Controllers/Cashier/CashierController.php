@@ -268,8 +268,15 @@ class CashierController extends Controller
         $table = Table::find($sale->table_id);
         $table->status = "available";
         $table->save();
-        return "/cashier";
+        return "/cashier/showReceipt/".$saleID;
+    }
+
+    public function showReceipt($saleID){
+        $sale = Sale::find($saleID);
+        $saleDetails = SaleDetail::where('sale_id', $saleID)->get();
+        return view('cashier.showReceipt')->with('sale', $sale)->with('saleDetails', $saleDetails);
 
     }
+
 
 }
