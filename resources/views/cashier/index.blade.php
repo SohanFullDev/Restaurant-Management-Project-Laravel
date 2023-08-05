@@ -48,13 +48,21 @@
         </div>
         <div class="modal-body">
          <h3 class="totalAmount"></h3>
+         <h3 class="changeAmount"></h3>
          <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
             </div>
             <input type="number" id="recieved-amount" class="form-control">
          </div>
-         <h3 class="changeAmount"></h3>
+         <div class="form-group">
+            <label for="payment">Payment Type</label>
+            <select name="" id="payment-type" class="form-control">
+                <option value="cash">Cash</option>
+                <option value="credit card">Credit Card</option>
+            </select>
+         </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -100,6 +108,7 @@
 
      var SELECTED_TABLE_ID = "";
      var SELECTED_TABLE_NAME = "";
+     var SALE_ID = "";
      // detect button table onclick to show table data
      $("#table-detail").on("click",".btn-table",function(){
         SELECTED_TABLE_ID = $(this).data("id");
@@ -182,6 +191,7 @@ $("#list-menu").on("click", ".btn-menu", function(){
         $(".totalAmount").html("Total Amount " + totalAmount);
         $("#recieved-amount").val('');
         $(".changeAmount").html('');
+        SALE_ID = $(this).data('id');
 
     });
 //calculate change
@@ -197,6 +207,15 @@ $("#recieved-amount").keyup(function(){
     }else{
         $('.btn-save-payment').prop('disabled', true);
     }
+
+});
+
+//save payment
+$(".btn-save-payment").click(function(){
+    var recievedAmount = $("#recieved-amount").val();
+    var paymentType = $("#payment-type").val();
+    var saleId = SALE_ID;
+    alert(saleId);
 
 });
 
