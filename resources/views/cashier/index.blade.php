@@ -48,10 +48,17 @@
         </div>
         <div class="modal-body">
          <h3 class="totalAmount"></h3>
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number" id="recieved-amount" class="form-control">
+         </div>
+         <h3 class="changeAmount"></h3>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary btn-save-payment" disabled>Save Payment</button>
         </div>
       </div>
     </div>
@@ -173,8 +180,26 @@ $("#list-menu").on("click", ".btn-menu", function(){
     $("#order-detail").on("click",".btn-payment",function(){
         var totalAmount = $(this).attr('data-totalAmount');
         $(".totalAmount").html("Total Amount " + totalAmount);
+        $("#recieved-amount").val('');
+        $(".changeAmount").html('');
 
     });
+//calculate change
+$("#recieved-amount").keyup(function(){
+    var totalAmount = $(".btn-payment").attr('data-totalAmount');
+    var recievedAmount = $(this).val();
+    var changeAmount = recievedAmount - totalAmount;
+    $(".changeAmount").html("Total Change: $" + changeAmount);
+
+    //check if cashier enter the right amount, then enable or disable save payment button
+    if(changeAmount >=0){
+        $('.btn-save-payment').prop('disabled',false);
+    }else{
+        $('.btn-save-payment').prop('disabled', true);
+    }
+
+});
+
 
    });
 
