@@ -1,8 +1,10 @@
 <?php
 
 
-use App\Http\Controllers\Cashier\CashierController;
+
+use App\Http\Controllers\Report\ReportController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Cashier\CashierController;
 use App\Http\Controllers\Management\MenuController;
 use App\Http\Controllers\Management\TableController;
 use App\Http\Controllers\Management\CategoryController;
@@ -50,3 +52,6 @@ Route::get('/cashier/showReceipt/{saleID}','Cashier\CashierController@showReceip
 Route::resource('management/category','Management\CategoryController');
 Route::resource('management/menu','Management\MenuController');
 Route::resource('management/table','Management\TableController');
+
+//report
+Route::get('/report','Report\ReportController@index');
