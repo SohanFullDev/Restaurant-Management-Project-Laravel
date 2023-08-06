@@ -55,3 +55,4 @@ Route::resource('management/table','Management\TableController');
 
 //report
 Route::get('/report','Report\ReportController@index');
+Route::get('/report/show', 'Report\ReportController@show');

@@ -37,7 +37,7 @@
                     <label for="">Choose Date For Report</label>
                     <div class="form-group">
                         <div class="input-group date" id="datepicker" data-target-input="nearest">
-                             <input type="text" date="datepicker" class="form-control datetimepicker-input" data-target="#datepicker"/>
+                             <input type="text" name="datepicker" class="form-control datetimepicker-input" data-target="#datepicker"/>
                              <div class="input-group-append" data-target="#datepicker" data-toggle="datetimepicker">
                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                              </div>
