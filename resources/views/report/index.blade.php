@@ -37,8 +37,8 @@
                     <label for="">Choose Date For Report</label>
                     <div class="form-group">
                         <div class="input-group date" id="datepicker" data-target-input="nearest">
-                             <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker7"/>
-                             <div class="input-group-append" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                             <input type="text" date="datepicker" class="form-control datetimepicker-input" data-target="#datepicker"/>
+                             <div class="input-group-append" data-target="#datepicker" data-toggle="datetimepicker">
                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                              </div>
                          </div>
@@ -46,13 +46,14 @@
 
                      <div class="form-group">
                         <div class="input-group date" id="datepicker2" data-target-input="nearest">
-                             <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"/>
-                             <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                             <input type="text" name="datepicker2" class="form-control datetimepicker-input" data-target="#datepicker2"/>
+                             <div class="input-group-append" data-target="#datepicker2" data-toggle="datetimepicker">
                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                              </div>
                          </div>
                      </div>
 
+                     <input type="submit" class="btn btn-primary" value="Show Report">
                 </div>
             </form>
 
@@ -61,12 +62,12 @@
     </div>
 
     <script type="text/javascript">
-    /*
+
     $(function(){
         $('#datepicker').datepicker();
         $('#datepicker2').datepicker();
-    });*/
-
+    });
+/*
     $(function () {
         $('#datepicker').datepicker({
             format : 'L'
@@ -81,7 +82,7 @@
         $("#datepicker2").on("change.datepicker", function (e) {
             $('#datepicker').datepicker('maxDate', e.date);
         });
-    });
+    });*/
 
     </script>
 
