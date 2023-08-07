@@ -2,6 +2,7 @@
 
 
 
+use App\Http\Controllers\Management\UserController;
 use App\Http\Middleware\VerifyAdmin;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Report\ReportController;
@@ -59,6 +60,7 @@ Route::middleware(['auth', 'VerifyAdmin'])->group(function(){
     Route::resource('management/category','Management\CategoryController');
     Route::resource('management/menu','Management\MenuController');
     Route::resource('management/table','Management\TableController');
+    Route::resource('management/user','Management\UserController');
 
     //report
     Route::get('/report','Report\ReportController@index');
