@@ -24,11 +24,9 @@ use App\Http\Controllers\Management\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
-Auth::routes();
+Auth::routes(['register'=> false, 'reset'=> false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
