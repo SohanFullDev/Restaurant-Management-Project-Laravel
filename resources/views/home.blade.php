@@ -15,24 +15,28 @@
                     @endif
 
                     <div class="row text-center">
+                        @if(Auth::user()->checkAdmin())
                         <div class="col-sm-4">
                             <a href="/management">
                             <h4>Management</h4>
                             <img src="{{ asset('images/pic1.jpg') }}" width="50px" alt="">
                         </a>
                         </div>
+                        @endif
                         <div class="col-sm-4">
                             <a href="/cashier">
                             <h4>Cashier</h4>
                             <img src="{{ asset('images/pic2.jpg') }}" width="50px" alt="">
                             </a>
                         </div>
+                        @if(Auth::user()->checkAdmin())
                         <div class="col-sm-4">
                             <a href="/report">
                             <h4>Report</h4>
                             <img src="{{ asset('images/pic3.jpg') }}" width="50px" alt="">
                             </a>
                         </div>
+                        @endif
                     </div>
 
                 </div>
