@@ -85,6 +85,12 @@
                     </table>
 
                     {{ $sales->appends($_GET)->links()}}
+
+                    <form action="/report/show/export" method="get">
+            <input type="hidden" name="datepicker" value="{{ $datepicker }}">
+            <input type="hidden" name="datepicker2" value="{{ $datepicker2 }}">
+            <input type="submit" class="btn btn-warning" value="Export To Excel">
+                    </form>
                     @else
                         <div class="alert alert-danger" role="alert">
                             There is no Sale Report

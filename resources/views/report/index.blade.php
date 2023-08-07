@@ -34,7 +34,8 @@
         <div class="row">
             <form action="/report/show" method="GET">
                 <div class="col-md-12">
-                    <label for="">Choose Date For Report</label>
+                    <label for="">Choose Date For Report</label> <br>
+      <span style="font-size: 10px; font-style: italic; color:chocolate;" >Starting Date</span>
                     <div class="form-group">
                         <div class="input-group date" id="datepicker" data-target-input="nearest">
                              <input type="text" name="datepicker" class="form-control datetimepicker-input" data-target="#datepicker"/>
@@ -43,7 +44,7 @@
                              </div>
                          </div>
                      </div>
-
+                     <span style="font-size: 10px; font-style: italic; color:chocolate;" >Ending Date</span>
                      <div class="form-group">
                         <div class="input-group date" id="datepicker2" data-target-input="nearest">
                              <input type="text" name="datepicker2" class="form-control datetimepicker-input" data-target="#datepicker2"/>

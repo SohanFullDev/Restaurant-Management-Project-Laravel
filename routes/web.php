@@ -48,7 +48,7 @@ Route::post('/cashier/confirmOrderStatus','Cashier\CashierController@confirmOrde
 Route::post('/cashier/savePayment','Cashier\CashierController@savePayment');
 Route::get('/cashier/showReceipt/{saleID}','Cashier\CashierController@showReceipt');
 
-
+//management
 Route::resource('management/category','Management\CategoryController');
 Route::resource('management/menu','Management\MenuController');
 Route::resource('management/table','Management\TableController');
@@ -56,3 +56,6 @@ Route::resource('management/table','Management\TableController');
 //report
 Route::get('/report','Report\ReportController@index');
 Route::get('/report/show', 'Report\ReportController@show');
+
+//export to excel
+Route::get('/report/show/export', 'Report\ReportController@export');
