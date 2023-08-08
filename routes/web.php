@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/cashier/orderFood', 'Cashier\CashierController@orderFood');
     Route::post('/cashier/deleteSaleDetail','Cashier\CashierController@deleteSaleDetail');
     Route::post('/cashier/increase-quantity','Cashier\CashierController@increaseQuantity');
+    Route::post('/cashier/decrease-quantity','Cashier\CashierController@decreaseQuantity');
 
 
     Route::post('/cashier/confirmOrderStatus','Cashier\CashierController@confirmOrderStatus');

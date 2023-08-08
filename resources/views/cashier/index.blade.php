@@ -203,6 +203,23 @@ $("#list-menu").on("click", ".btn-menu", function(){
 
     });
 
+    //decrease quantity
+    $("#order-detail").on("click",".btn-decrease-quantity",function(){
+        var saleDetailID = $(this).data("id");
+        $.ajax({
+            type: "POST",
+            data: {
+                "_token" : $('meta[name="csrf-token"]').attr('content'),
+                "saleDetail_id": saleDetailID
+            },
+            url: "/cashier/decrease-quantity",
+            success: function(data){
+                $("#order-detail").html(data);
+            }
+
+        });
+
+    });
 
     //when a user click on the payment button
     $("#order-detail").on("click",".btn-payment",function(){
