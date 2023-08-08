@@ -184,11 +184,18 @@ class CashierController extends Controller
          $showBtnPayment = true;
          foreach($saleDetails as $saleDetail){
 
+            $decreaseButton = '<button class="btn btn-danger btn-sm btn-decrease-quantity" disabled>-</button>';
+            if($saleDetail->quantity>1){
+                $decreaseButton = '<button data-id="'.$saleDetail->id.'" class="btn btn-danger btn-sm btn-decrease-quantity">-</button>';
+            }
+
+
              $html .='
                  <tr>
                      <td>'.$saleDetail->menu_id.'</td>
                      <td>'.$saleDetail->menu_name.'</td>
-                     <td> <button data-id="'.$saleDetail->id.'" class="btn btn-danger btn-sm btn-decrease-quantity">-</button>'.$saleDetail->quantity.' <button data-id="'.$saleDetail->id.'" class="btn btn-primary btn-sm btn-increase-quantity">+</button> </td>
+                     <td>'. $decreaseButton. ' '. $saleDetail->quantity.'
+                     <button data-id="'.$saleDetail->id.'" class="btn btn-primary btn-sm btn-increase-quantity">+</button> </td>
                      <td>'.$saleDetail->menu_price.'</td>
                      <td>'.($saleDetail->menu_price * $saleDetail->quantity).'</td>';
                      if($saleDetail->status == "noConfirm"){
